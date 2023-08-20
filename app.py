@@ -1,56 +1,71 @@
-#Informacion de datos:
-# nombreCliente = input("Por favor ingresa tu nombre : ")
-# nPersonasAdultas = input("Por favor ingrese cuantas personas adultas van a viajar: ")
-# numeroNiños = input("Por favor ingrese cuantos niños van a viajar: ")
+#variables de precio
+precioAdulGuajira = 1450000
+precioAdulCañonChicamocha = 1600000 
+precioAdulLlanosOrientales = 1200000
 
-inicio = 0
-destinoUno = 1  #Guajira
-destinoDos = 2  #Cañon del chicamocha
-destinoTres = 3 #Llanos orientales
-
+precioNiñoGuajira = 870000
+precioNiñoCañonChicamocha = 960000
+precioNiñoLlanosOrientales = 720000
 
 
 
 while True:
-    print("Opciones:")
+    print("Bienvenido a XYZ :")
     print("1. Reservar para la Guajira")
     print("2. Reservar para Cañon del chicamocha")
     print("3. Reservar para los Llanos orientales")
     print("4. Finalizar la reserva o ingresar otro número diferente a los anteriores")
     
-    opcion = int(input("Ingrese el número de su opción: "))
-    
-    if opcion == 1:
-        
-        nameU = input("Por favor ingresa tu nombre : ")
-        nPerAduls = input("Por favor ingrese cuantas personas adultas van a viajar: ")
-        nNiños = input("Por favor ingrese cuantas niños van a viajar: ")
+    opcion = int(input("Ingrese el número de sus proximas vacaciones: "))
 
+    if opcion == 4:
+        print("Cancelaste la operación.")
+        break
+    
+    elif opcion == 1:
         
+        nombreCliente = input("Por favor ingresa tu nombre completo : ")
+        numeroAduls = int(input("Por favor ingrese cuantas personas adultas van a viajar: "))
+        numeroNiños = int(input("Por favor ingrese cuantas niños van a viajar: "))
 
         print("Has seleccionado reservar para la Guajira.")
 
-    # elif opcion == 2:
-    #     nameU = input("Por favor ingresa tu nombre : ")
-    #     nPerAduls = input("Por favor ingrese cuantas personas adultas van a viajar: ")
-    #     nNiños = input("Por favor ingrese cuantas niños van a viajar: ")
-    #     print("Has seleccionado reservar para el Cañon del chicamocha.")
+        subTotal = (numeroAduls * precioAdulGuajira) + (numeroNiños * precioNiñoGuajira) 
 
-    # elif opcion == 3:
-    #     nameU = input("Por favor ingresa tu nombre : ")
-    #     nPerAduls = input("Por favor ingrese cuantas personas adultas van a viajar: ")
-    #     nNiños = input("Por favor ingrese cuantas niños van a viajar: ")
-    #     print("Has seleccionado reservar para Llanos grandes.")
+        break
 
+    elif opcion == 2:
+        nombreCliente = input("Por favor ingresa tu nombre completo : ")
+        numeroAduls = int(input("Por favor ingrese cuantas personas adultas van a viajar: "))
+        numeroNiños = int(input("Por favor ingrese cuantas niños van a viajar: "))
 
+        print("Has seleccionado reservar para ir Cañonchicamocha.")
 
-        break  # Detener el bucle
+        
+        subTotal = (numeroAduls * precioAdulCañonChicamocha) + (numeroNiños * precioNiñoCañonChicamocha) 
+
+        break
+       
+
+    elif opcion == 3:
+        nombreCliente = input("Por favor ingresa tu nombre completo : ")
+        numeroAduls = int(input("Por favor ingrese cuantas personas adultas van a viajar: "))
+        numeroNiños = int(input("Por favor ingrese cuantas niños van a viajar: "))
+
+        print("Has seleccionado reservar para Llanos Orientales.")
+
+        subTotal = (numeroAduls * precioAdulLlanosOrientales) + (numeroNiños * precioNiñoLlanosOrientales) 
+
+        break
+
     else:
         print("Opción inválida. Por favor, ingrese un número válido.")
 
-print("¡Reserva finalizada!")
-
-
-
+        break  
  
+print("¡Reserva finalizada!")
+print("Nombre del cliente ", nombreCliente)
+print("Numero de pasajeros adultos mayores ", numeroAduls)
+print("Numero de pasajeros menores ", numeroNiños)
+print("Total a pagar ", subTotal)
 
